@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,9 @@
     <title>AfriConnect Summit 2026</title>
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
@@ -20,92 +23,118 @@
 
 <body>
 
-<header>
+    <!-- ================= HEADER ================= -->
 
-<nav class="navbar">
+    <header>
 
-<div class="logo">
-AfriConnect Summit 2026
-</div>
+        <nav class="navbar">
 
-<ul class="nav-links">
+            <div class="logo">
+                AfriConnect Summit <span>2026</span>
+            </div>
 
-<li><a href="index.html">Accueil</a></li>
+            <ul class="nav-links">
 
-<li><a href="programme.html">Programme</a></li>
+                <li><a href="index.html">Accueil</a></li>
 
-<li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="programme.html">Programme</a></li>
 
-<li><a href="contact.html">Contact</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
 
-</ul>
+                <li><a href="contact.html">Contact</a></li>
 
-<div class="nav-actions">
+            </ul>
 
-<button id="theme-toggle">
-<i class="bi bi-moon-stars"></i>
-</button>
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="bi bi-list"></i>
+            </button>
 
-<button class="menu-toggle">
-<i class="bi bi-list"></i>
-</button>
+        </nav>
 
-</div>
+    </header>
 
-</nav>
+    <!-- ================= MAIN ================= -->
 
-</header>
+    <main>
 
-<main>
+    </main>
 
-</main>
+    <!-- ================= FOOTER ================= -->
 
-<footer>
+    <footer>
 
-<div class="footer-container">
+        <p>&copy; <span id="year"></span> AfriConnect Summit 2026</p>
 
-<div>
+    </footer>
 
-<h3>AfriConnect Summit</h3>
+    <script src="js/script.js"></script>
 
-<p>Le plus grand rendez-vous Tech d'Afrique.</p>
+    <!-- ================= HERO ================= -->
 
-</div>
+<section class="hero">
 
-<div>
+    <div class="hero-content reveal">
 
-<h3>Navigation</h3>
+        <h1>AfriConnect Summit 2026</h1>
 
-<a href="index.html">Accueil</a><br>
-<a href="programme.html">Programme</a><br>
-<a href="intervenants.html">Intervenants</a><br>
-<a href="contact.html">Contact</a>
+        <p>
+            Le plus grand rendez-vous panafricain des développeurs,
+            entrepreneurs et investisseurs.
+        </p>
 
-</div>
+        <p class="hero-info">
+            📍 Dakar, Sénégal • 20 au 22 novembre 2026
+        </p>
 
-<div>
+        <div class="hero-buttons">
 
-<h3>Suivez-nous</h3>
+            <a href="contact.html" class="btn btn-primary">
+                Réserver ma place
+            </a>
 
-<i class="bi bi-facebook"></i>
+            <a href="programme.html" class="btn btn-secondary">
+                Voir le programme
+            </a>
 
-<i class="bi bi-instagram"></i>
+        </div>
 
-<i class="bi bi-linkedin"></i>
+    </div>
 
-<i class="bi bi-twitter-x"></i>
+    <div class="hero-image reveal">
 
-</div>
+        <img src="./CSS/images/afcs.jpeg"
+             alt="Conférence AfriConnect Summit">
 
-</div>
+    </div>
 
-<p class="copyright">
-© <span id="year"></span> AfriConnect Summit
-</p>
+</section>
 
-</footer>
+<!-- ================= COMPTE À REBOURS ================= -->
 
-<script src="js/script.js"></script>
+<section class="countdown">
+
+    <div>
+        <span id="days">30</span>
+        <p>Jours</p>
+    </div>
+
+    <div>
+        <span id="hours">24</span>
+        <p>Heures</p>
+    </div>
+
+    <div>
+        <span id="minutes">60</span>
+        <p>Minutes</p>
+    </div>
+
+    <div>
+        <span id="seconds">60</span>
+        <p>Secondes</p>
+    </div>
+
+</section>
 
 </body>
+
 </html>
