@@ -174,3 +174,318 @@ topButton.addEventListener("click", () => {
     });
 
 });
+/* ==========================================
+   AFRICONNECT SUMMIT 2026
+   main.js
+========================================== */
+
+/* ==========================
+   ANNÉE DYNAMIQUE
+========================== */
+
+const year = document.getElementById("year");
+
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
+
+/* ==========================
+   DARK MODE
+========================== */
+
+const themeBtn = document.getElementById("theme-toggle");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+}
+
+if (themeBtn) {
+
+    themeBtn.addEventListener("click", () => {
+
+        let currentTheme =
+            document.documentElement.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+
+            document.documentElement.setAttribute("data-theme", "light");
+
+            localStorage.setItem("theme", "light");
+
+        } else {
+
+            document.documentElement.setAttribute("data-theme", "dark");
+
+            localStorage.setItem("theme", "dark");
+
+        }
+
+    });
+
+}
+
+/* ==========================
+   NAVBAR AU SCROLL
+========================== */
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (!navbar) return;
+
+    if (window.scrollY > 80) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+/* ==========================
+   MENU HAMBURGER
+========================== */
+
+const menuBtn = document.querySelector(".menu-toggle");
+
+const navLinks = document.querySelector(".nav-links");
+
+if (menuBtn && navLinks) {
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("show");
+
+    });
+
+}
+
+/* ==========================
+   ONGLETS PROGRAMME
+========================== */
+
+const tabs = document.querySelectorAll(".tab-btn");
+
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        tabs.forEach(btn => btn.classList.remove("active"));
+
+        contents.forEach(content => {
+
+            content.classList.remove("active");
+
+        });
+
+        tab.classList.add("active");
+
+        document
+            .getElementById(tab.dataset.tab)
+            .classList.add("active");
+
+    });
+
+});
+
+/* ==========================
+   RETOUR EN HAUT
+========================== */
+
+const backTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if (!backTop) return;
+
+    if (window.scrollY > 300) {
+
+        backTop.style.display = "flex";
+
+    } else {
+
+        backTop.style.display = "none";
+
+    }
+
+});
+
+if (backTop) {
+
+    backTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+/* ==========================
+   ANIMATION AU SCROLL
+========================== */
+
+const hiddenElements = document.querySelectorAll(
+
+    ".theme-card, .speaker-card, .stat-card, .why-card"
+
+);
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.20
+
+});
+
+hiddenElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+/* ==========================
+   COMPTEURS (Accueil)
+========================== */
+
+const counters = document.querySelectorAll(".counter");
+
+const speed = 200;
+
+counters.forEach(counter => {
+
+    const animate = () => {
+
+        const target = +counter.dataset.target;
+
+        const value = +counter.innerText;
+
+        const increment = Math.ceil(target / speed);
+
+        if (value < target) {
+
+            counter.innerText = value + increment;
+
+            setTimeout(animate, 10);
+
+        } else {
+
+            counter.innerText = target;
+
+        }
+
+    };
+
+    animate();
+
+});
+
+/* ==========================
+   FILTRE INTERVENANTS
+========================== */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const speakerCards = document.querySelectorAll(".speaker-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        speakerCards.forEach(card => {
+
+            if (filter === "all" ||
+
+                card.dataset.category === filter) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+/* ==========================
+   VALIDATION FORMULAIRE
+========================== */
+
+const form = document.querySelector("form");
+
+if (form) {
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const required = form.querySelectorAll("[required]");
+
+        let valid = true;
+
+        required.forEach(input => {
+
+            if (input.value.trim() === "") {
+
+                input.style.border = "2px solid red";
+
+                valid = false;
+
+            } else {
+
+                input.style.border = "2px solid green";
+
+            }
+
+        });
+
+        if (valid) {
+
+            alert("Inscription envoyée avec succès !");
+
+            form.reset();
+
+        }
+
+    });
+
+}
