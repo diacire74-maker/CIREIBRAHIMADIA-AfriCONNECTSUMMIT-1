@@ -121,3 +121,56 @@ observer.observe(section);
     transition:.3s;
 
 }
+/* ===========================
+Navbar dynamique
+=========================== */
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 80) {
+
+        navbar.style.boxShadow = "0 8px 20px rgba(0,0,0,.1)";
+        navbar.style.background = "rgba(255,255,255,.95)";
+
+    } else {
+
+        navbar.style.boxShadow = "none";
+        navbar.style.background = "rgba(255,255,255,.9)";
+
+    }
+
+});
+
+/* ===========================
+Bouton retour en haut
+=========================== */
+
+const topButton = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        topButton.style.display = "block";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
+
+});
+
+topButton.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});

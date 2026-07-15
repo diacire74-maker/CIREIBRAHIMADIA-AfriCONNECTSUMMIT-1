@@ -679,3 +679,112 @@ grid-template-columns:1fr;
 }
 
 }
+/* ===========================
+SPONSORS
+=========================== */
+
+.sponsors{
+
+padding:100px 8%;
+
+}
+
+.sponsor-level{
+
+margin-top:50px;
+
+}
+
+.sponsor-logos{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:20px;
+
+}
+
+.sponsor-card{
+
+background:white;
+
+padding:20px 40px;
+
+border-radius:12px;
+
+font-weight:600;
+
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.sponsor-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.gold .sponsor-card{
+
+font-size:1.2rem;
+
+}
+
+.silver .sponsor-card{
+
+font-size:1rem;
+
+}
+
+.bronze .sponsor-card{
+
+font-size:.9rem;
+
+}
+
+/* ===========================
+Retour en haut
+=========================== */
+
+#backToTop{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:50px;
+
+height:50px;
+
+border:none;
+
+border-radius:50%;
+
+background:var(--primary);
+
+color:white;
+
+display:none;
+
+cursor:pointer;
+
+z-index:999;
+
+transition:.3s;
+
+}
+
+#backToTop:hover{
+
+transform:translateY(-5px);
+
+}
