@@ -489,3 +489,93 @@ if (form) {
     });
 
 }
+// ===========================
+// FILTRAGE DES INTERVENANTS
+// ===========================
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const speakerCards = document.querySelectorAll(".speaker-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Retire la classe active de tous les boutons
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Active le bouton sélectionné
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        // Affiche ou masque les cartes
+        speakerCards.forEach(card => {
+
+            if (filter === "all") {
+
+                card.style.display = "block";
+
+            } else if (card.getAttribute("data-category") === filter) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+// ===========================
+// ANNÉE DYNAMIQUE
+// ===========================
+
+const year = document.getElementById("year");
+
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
+
+
+// ===========================
+// BOUTON RETOUR EN HAUT
+// ===========================
+
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            backToTop.style.display = "block";
+
+        } else {
+
+            backToTop.style.display = "none";
+
+        }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
