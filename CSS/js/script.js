@@ -579,3 +579,150 @@ if (backToTop) {
     });
 
 }
+// ===========================
+// VALIDATION FORMULAIRE CONTACT
+// ===========================
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const nom = document.getElementById("nom");
+        const email = document.getElementById("email");
+        const telephone = document.getElementById("telephone");
+        const participation = document.getElementById("participation");
+        const pays = document.getElementById("pays");
+        const message = document.getElementById("message");
+        const successMessage = document.getElementById("successMessage");
+
+        successMessage.textContent = "";
+
+        // Réinitialiser les bordures
+        [nom, email, telephone, participation, pays, message].forEach(champ => {
+            champ.style.border = "1px solid #ddd";
+        });
+
+        let valide = true;
+
+        // Nom
+        if (nom.value.trim() === "") {
+            nom.style.border = "2px solid red";
+            valide = false;
+        } else {
+            nom.style.border = "2px solid green";
+        }
+
+        // Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email.value.trim())) {
+            email.style.border = "2px solid red";
+            valide = false;
+        } else {
+            email.style.border = "2px solid green";
+        }
+
+        // Téléphone
+        const phoneRegex = /^[0-9]{8,}$/;
+
+        if (!phoneRegex.test(telephone.value.trim())) {
+            telephone.style.border = "2px solid red";
+            valide = false;
+        } else {
+            telephone.style.border = "2px solid green";
+        }
+
+        // Participation
+        if (participation.value === "") {
+            participation.style.border = "2px solid red";
+            valide = false;
+        } else {
+            participation.style.border = "2px solid green";
+        }
+
+        // Pays
+        if (pays.value === "") {
+            pays.style.border = "2px solid red";
+            valide = false;
+        } else {
+            pays.style.border = "2px solid green";
+        }
+
+        // Message
+        if (message.value.trim().length < 20) {
+            message.style.border = "2px solid red";
+            valide = false;
+        } else {
+            message.style.border = "2px solid green";
+        }
+
+        // Succès
+        if (valide) {
+
+            successMessage.textContent =
+                "✅ Votre inscription a été envoyée avec succès !";
+
+            successMessage.style.color = "green";
+            successMessage.style.fontWeight = "bold";
+
+            contactForm.reset();
+
+            [nom, email, telephone, participation, pays, message].forEach(champ => {
+                champ.style.border = "1px solid #ddd";
+            });
+        }
+
+    });
+
+}
+
+
+// ===========================
+// ANNÉE DYNAMIQUE
+// ===========================
+
+const year = document.getElementById("year");
+
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
+
+
+// ===========================
+// BOUTON RETOUR EN HAUT
+// ===========================
+
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            backToTop.style.display = "block";
+
+        } else {
+
+            backToTop.style.display = "none";
+
+        }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}

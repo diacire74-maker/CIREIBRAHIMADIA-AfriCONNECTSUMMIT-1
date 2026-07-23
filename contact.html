@@ -1,1 +1,241 @@
 <title>Contact | AfriConnect Summit</title>
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | AfriConnect Summit 2026</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">AfriConnect Summit</a>
+
+<ul class="nav-links">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="programme.html">Programme</a></li>
+<li><a href="intervenants.html">Intervenants</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<main>
+
+<section class="page-hero">
+
+<h1>Inscription & Contact</h1>
+
+<p>Rejoignez la plus grande conférence technologique panafricaine.</p>
+
+<nav class="breadcrumb">
+<a href="index.html">Accueil</a> >
+<span>Contact</span>
+</nav>
+
+</section>
+
+<section class="contact-section">
+
+<div class="contact-container">
+
+<div class="contact-form">
+
+<h2>Formulaire d'inscription</h2>
+
+<form id="contactForm">
+
+<div class="form-group">
+<label>Nom complet</label>
+<input type="text" id="nom" required>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="email" required>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Téléphone</label>
+<input type="tel" id="telephone" required>
+<small class="error"></small>
+</div>
+
+<div class="form-group">
+<label>Type de participation</label>
+
+<select id="participation" required>
+
+<option value="">Choisir...</option>
+<option>Participant</option>
+<option>Intervenant</option>
+<option>Sponsor</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Pays</label>
+
+<select id="pays" required>
+
+<option value="">Choisir...</option>
+<option>Sénégal</option>
+<option>Mali</option>
+<option>Guinée</option>
+<option>Côte d'Ivoire</option>
+<option>Ghana</option>
+<option>Nigeria</option>
+<option>Bénin</option>
+<option>Togo</option>
+<option>Cameroun</option>
+<option>Kenya</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Message / Motivation</label>
+
+<textarea id="message" rows="6" required></textarea>
+
+<small class="error"></small>
+
+</div>
+
+<button type="submit" class="btn">
+Envoyer
+</button>
+
+<p id="successMessage"></p>
+
+</form>
+
+</div>
+
+<div class="contact-info">
+
+<h2>Informations</h2>
+
+<p><i class="bi bi-geo-alt"></i> Dakar, Sénégal</p>
+
+<p><i class="bi bi-envelope"></i> diacire74@gmail.com</p>
+
+<p><i class="bi bi-telephone"></i> +221 78 107 18 88</p>
+
+<h3>Lieu</h3>
+
+<iframe
+src="https://www.google.com/maps?q=Dakar&output=embed"
+width="100%"
+height="300"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="faq">
+
+<h2>Questions fréquentes</h2>
+
+<details>
+<summary>Comment s'inscrire ?</summary>
+<p>Remplissez simplement le formulaire.</p>
+</details>
+
+<details>
+<summary>La participation est-elle gratuite ?</summary>
+<p>Oui, l'inscription est gratuite.</p>
+</details>
+
+<details>
+<summary>Recevrai-je une confirmation ?</summary>
+<p>Oui, après validation.</p>
+</details>
+
+<details>
+<summary>Puis-je devenir sponsor ?</summary>
+<p>Oui, choisissez "Sponsor" dans le formulaire.</p>
+</details>
+
+<details>
+<summary>Comment contacter l'équipe ?</summary>
+<p>Utilisez le formulaire ou l'adresse e-mail affichée.</p>
+</details>
+
+</section>
+
+</main>
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<h3>AfriConnect Summit</h3>
+
+<p>Le plus grand rendez-vous Tech d'Afrique.</p>
+
+</div>
+
+<div>
+
+<h3>Navigation</h3>
+
+<a href="index.html">Accueil</a><br>
+<a href="programme.html">Programme</a><br>
+<a href="intervenants.html">Intervenants</a><br>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div>
+
+<h3>Suivez-nous</h3>
+
+<i class="bi bi-facebook"></i>
+
+<i class="bi bi-instagram"></i>
+
+<i class="bi bi-linkedin"></i>
+
+<i class="bi bi-twitter-x"></i>
+
+</div>
+
+</div>
+
+<p class="copyright">
+© <span id="year"></span> AfriConnect Summit
+</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+```
